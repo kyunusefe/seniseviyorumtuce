@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bizim Yapbozumuz</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f7f0e8;
+      text-align: center;
+    }
+    h1 {
+      color: #cc3366;
+      margin-top: 20px;
+    }
+    #puzzle {
+      max-width: 600px;
+      margin: auto;
+      margin-top: 20px;
+    }
+    #message {
+      font-size: 20px;
+      color: #444;
+      margin-top: 30px;
+      display: none;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/puzzlejs@1.0.3/puzzle.min.js"></script>
+</head>
+<body>
+  <h1>Birlikte yeniden tamamlayabilir miyiz?</h1>
+  <div id="puzzle"></div>
+  <div id="message">
+    <p><strong>Bazen biz de bu yapbozun parçaları gibi dağılabiliyoruz,</strong></p>
+    <p>ama birleştirmek, az önce senin de yaptığın gibi, bizim elimizde.</p>
+    <p>Seni çok seviyorum.</p>
+  </div>
+  <script>
+    new Puzzle({
+      src: "https://raw.githubusercontent.com/YunusDevTemp/romantik-site/main/pagoda.jpg", // foto adresi buraya
+      width: 600,
+      height: 400,
+      rows: 4,
+      columns: 4,
+      el: "#puzzle",
+      onComplete: function () {
+        document.getElementById("message").style.display = "block";
+      },
+    });
+  </script>
+</body>
+</html>
